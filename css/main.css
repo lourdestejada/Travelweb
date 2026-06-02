@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 * {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -58,6 +57,7 @@ header .header-nav ul {
 header .logo :hover {
   transform: translateY(-3px);
 }
+
 /*PRIMERA SECCIÓN (Hero & Galería)*/
 main .first-section {
   display: grid;
@@ -66,6 +66,7 @@ main .first-section {
   align-items: center;
   min-height: 70vh;
 }
+
 main .first-section .section-content .decoration {
   background-color: #feeacf;
   color: #b57212;
@@ -76,20 +77,24 @@ main .first-section .section-content .decoration {
   display: inline-block;
   margin-bottom: 25px;
 }
+
 main .first-section .section-content h1 {
   font-size: 3.5rem;
   line-height: 1.2;
   margin-bottom: 25px;
 }
+
 main .first-section .section-content .highlight {
   color: #ffa423;
 }
+
 main .first-section .section-gallery {
   display: flex;
   align-items: center;
   gap: 15px;
   height: 100%;
 }
+
 main .first-section .section-gallery .gallery-item {
   flex: 1;
   border: 2px solid;
@@ -97,6 +102,7 @@ main .first-section .section-gallery .gallery-item {
   overflow: hidden;
   box-shadow: 0 10px 30px;
 }
+
 main .first-section .section-gallery .item-1 {
   height: 380px;
   transform: translateY(-30px);
@@ -110,7 +116,6 @@ main .first-section .section-gallery .item-3 {
   height: 360px;
   transform: translateY(30px);
 }
-
 
 main .newsletter-section {
   margin: 80px 0;
@@ -292,5 +297,7 @@ footer .banner-tours img {
   height: 100%;
   width: 200px;
 }
+
+
 
 /*# sourceMappingURL=main.css.map */
