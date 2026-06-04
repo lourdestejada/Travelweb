@@ -1,6 +1,11 @@
 @charset "UTF-8";
+/* ==========================================================================
+   1. VARIABLES DE DISEÑO (Colores y Fuentes)
+   ========================================================================== */
+/* ==========================================================================
+   2. ESTILOS GLOBALES Y RESET
+   ========================================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 * {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -13,32 +18,29 @@ video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 
-/* ==========================================
-   3. ENLACES GLOBALES (Estructura LoVe/HAte)
-   ========================================== */
 a {
   color: black;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 a:visited {
   color: #e08316;
 }
-
 a:hover {
   color: #ffa423;
   text-decoration: underline;
 }
-
 a:active {
   color: #e08316;
 }
 
+/* ==========================================================================
+   3. ESTRUCTURA DE LA PÁGINA (Anidada)
+   ========================================================================== */
 header {
   display: flex;
   justify-content: space-between;
@@ -47,26 +49,20 @@ header {
   margin-right: 40px;
   font-size: 20px;
 }
-
 header .header-nav ul {
   display: flex;
-  justify-items: space-between;
   gap: 30px;
   list-style: none;
 }
 
-header .logo :hover {
-  transform: translateY(-3px);
-}
-/*PRIMERA SECCIÓN (Hero & Galería)*/
-main .first-section {
+.first-section {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 60px;
   align-items: center;
   min-height: 70vh;
 }
-main .first-section .section-content .decoration {
+.first-section .section-content .decoration {
   background-color: #feeacf;
   color: #b57212;
   padding: 8px 16px;
@@ -76,47 +72,43 @@ main .first-section .section-content .decoration {
   display: inline-block;
   margin-bottom: 25px;
 }
-main .first-section .section-content h1 {
-  font-size: 3.5rem;
+.first-section .section-content h1 {
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 25px;
 }
-main .first-section .section-content .highlight {
+.first-section .section-content .highlight {
   color: #ffa423;
 }
-main .first-section .section-gallery {
+.first-section .section-gallery {
   display: flex;
   align-items: center;
   gap: 15px;
   height: 100%;
 }
-main .first-section .section-gallery .gallery-item {
+.first-section .section-gallery .gallery-item {
   flex: 1;
   border: 2px solid;
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 10px 30px;
 }
-main .first-section .section-gallery .item-1 {
+.first-section .section-gallery .item-1 {
   height: 380px;
   transform: translateY(-30px);
 }
-
-main .first-section .section-gallery .item-2 {
+.first-section .section-gallery .item-2 {
   height: 380px;
 }
-
-main .first-section .section-gallery .item-3 {
+.first-section .section-gallery .item-3 {
   height: 360px;
   transform: translateY(30px);
 }
 
-
-main .newsletter-section {
+.newsletter-section {
   margin: 80px 0;
 }
-
-main .newsletter-section .newsletter-container {
+.newsletter-section .newsletter-container {
   background-color: #d2e9f9;
   border-radius: 24px;
   display: grid;
@@ -126,21 +118,18 @@ main .newsletter-section .newsletter-container {
   position: relative;
   overflow: visible;
 }
-
-main .newsletter-section .newsletter-content {
+.newsletter-section .newsletter-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0;
 }
-
-main .newsletter-section .newsletter-content h2 {
+.newsletter-section .newsletter-content h2 {
   font-size: 2.2rem;
   line-height: 1.3;
   padding: 0 0 20px 0;
 }
-
-main .newsletter-section .subscribe-form {
+.newsletter-section .subscribe-form {
   display: flex;
   background-color: white;
   padding: 8px;
@@ -149,24 +138,20 @@ main .newsletter-section .subscribe-form {
   margin-bottom: 20px;
   max-width: 480px;
 }
-
-main .newsletter-section .subscribe-form input {
+.newsletter-section .subscribe-form input {
   border: none;
   outline: none;
   padding: 12px 15px;
   font-size: 1rem;
   flex: 1;
 }
-
-main .newsletter-section .subscribe-form input::-moz-placeholder {
+.newsletter-section .subscribe-form input::-moz-placeholder {
   color: #a0aec0;
 }
-
-main .newsletter-section .subscribe-form input::placeholder {
+.newsletter-section .subscribe-form input::placeholder {
   color: #a0aec0;
 }
-
-main .newsletter-section .subscribe-form .btn-subscribe {
+.newsletter-section .subscribe-form .btn-subscribe {
   background-color: #e08316;
   color: white;
   border: none;
@@ -177,120 +162,95 @@ main .newsletter-section .subscribe-form .btn-subscribe {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-
-main .newsletter-section .subscribe-form .btn-subscribe:hover {
-  filter: brightness(90%);
+.newsletter-section .subscribe-form .btn-subscribe:hover {
+  filter: brightness(92%);
 }
-
-main .newsletter-section .newsletter-note {
+.newsletter-section .newsletter-note {
   font-size: 0.85rem;
   color: #5a6573;
   line-height: 1.5;
   max-width: 450px;
 }
-
-main .newsletter-section .newsletter-image {
+.newsletter-section .newsletter-image {
   position: relative;
 }
-
-main .newsletter-section .newsletter-image img {
+.newsletter-section .newsletter-image img {
   position: absolute;
   bottom: -20px;
   right: 20px;
   height: 125%;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   border: none;
 }
 
-/* MAIN FOOTER */
-footer .main-footer {
+.main-footer {
   background-color: white;
 }
-
-footer .main-footer .footer-container {
+.main-footer .footer-container {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 20px;
 }
-
-footer .main-footer .footer-col h3 {
+.main-footer .footer-col h3 {
   font-size: 1.2rem;
   position: relative;
 }
-
-footer .main-footer .footer-col ul {
+.main-footer .footer-col ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
-footer .main-footer .footer-col ul a {
+.main-footer .footer-col ul a {
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.2s;
 }
-
-footer .main-footer .footer-about .footer-logo img {
+.main-footer .footer-about .footer-logo img {
   height: 100%;
   width: 300px;
   margin-bottom: 20px;
 }
-
-footer .main-footer .footer-about .footer-desc {
+.main-footer .footer-about .footer-desc {
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 20px;
   padding: 20px;
 }
-
-footer .main-footer .footer-about .social-links {
+.main-footer .footer-about .social-links {
   display: flex;
   gap: 15px;
 }
-
-footer .main-footer .footer-about .social-links a {
+.main-footer .footer-about .social-links a {
   text-decoration: none;
   font-size: 1.2rem;
   transition: transform 0.2s;
   margin-left: 20px;
   color: #ffa423;
 }
-
-footer .main-footer .footer-about .social-links a:hover {
+.main-footer .footer-about .social-links a:hover {
   transform: translateY(-3px);
 }
-
-footer .main-footer .footer-contact ul li {
+.main-footer .footer-contact ul li {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   font-size: 0.95rem;
   line-height: 1.4;
 }
-
-footer .main-footer .footer-contact ul li .icon {
+.main-footer .footer-contact ul li .icon {
   font-size: 1.1rem;
   margin-top: 2px;
   color: #ffa423;
 }
-
-footer .main-footer .footer-contact ul li strong {
+.main-footer .footer-contact ul li strong {
   display: block;
   margin-bottom: 2px;
 }
-
-footer .main-footer .footer-bottom {
+.main-footer .footer-bottom {
   border-top: 1px solid #edf2f7;
   padding: 20px 20px;
   text-align: center;
   font-size: 0.85rem;
-}
-
-footer .banner-tours img {
-  height: 100%;
-  width: 200px;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
