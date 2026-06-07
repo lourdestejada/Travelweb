@@ -1,0 +1,92 @@
+.main-footer {
+    background-color: white;
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .footer-col {
+        h3 {
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            a {
+                text-decoration: none;
+                font-size: 0.95rem;
+                transition: color 0.2s;
+            }
+        }
+    }
+
+    // Subsección: Información de marca y redes sociales
+    .footer-about {
+        .footer-logo img {
+            height: 100%;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .footer-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+
+            a {
+                text-decoration: none;
+                font-size: 1.2rem;
+                transition: transform 0.2s;
+                margin-left: 20px;
+                color: $color-primario;
+
+                &:hover {
+                    transform: translateY(-3px); // Animación de salto
+                }
+            }
+        }
+    }
+
+    // Subsección: Lista de datos de contacto
+    .footer-contact {
+        ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+
+            .icon {
+                font-size: 1.1rem;
+                margin-top: 2px;
+                color: $color-primario;
+            }
+
+            strong {
+                display: block;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    // Barra de créditos inferior
+    .footer-bottom {
+        border-top: 1px solid $color-borde;
+        padding: 20px 20px;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+}
