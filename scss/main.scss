@@ -1,9 +1,9 @@
-@import "variables";
-@import "base";
+@use "variables";
+@use "base";
 
-@import "layout/header";
-@import "layout/footer";
+@use "layout/header";
+@use "layout/footer";
 
-@import "pages/home";
-@import "pages/tours";
-@import "pages/quienessomos"
+@use "pages/home";
+@use "pages/tours";
+@use "pages/nosotros"

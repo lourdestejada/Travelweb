@@ -1,0 +1,135 @@
+@use "../variables" as *;
+
+.tours-hero {
+    background-image: url(../assets/isla.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .hero.overlay {
+        background-color: rgba(0, 0, 0, 0.35);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        font-style: italic;
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        z-index: 1;
+    }
+}
+
+.tours-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+
+    h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+        font-weight: 700;
+        color: black;
+    }
+
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.tour-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5 ease;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60%;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0)100%);
+        pointer-events: none;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.card-info {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    color: white;
+
+    .destination-title {
+        display: block;
+        font-family: "Playfair Display", "Georgia", cursive, serif;
+        font-size: 2.2rem;
+        font-style: italic;
+        line-height: 1;
+        margin-bottom: 2px;
+    }
+
+    .country-title {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+}
+
+.card-large {
+    grid-column: span 3;
+    height: 450px;
+}
+.card-small {
+    grid-column: span 2;
+    height: 180px;
+
+    .destination-title{
+        font-size: 1.6rem;
+    }
+}
+.card-medium {
+    grid-column: span 3;
+    height: 350px;
+}
