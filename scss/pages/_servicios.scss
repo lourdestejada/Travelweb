@@ -1,0 +1,165 @@
+@use "../variables" as *;
+
+.about-gestion {
+    text-align: center;
+    margin-bottom: 90px;
+
+    .gestion-header {
+        margin-bottom: 50px;
+
+        h3 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: black;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    }
+
+    .gestion-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .gestion-card {
+        background-color: $color-badge-bg;
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: left;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 122, 0, 0.15);
+            color: $color-primario;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: black;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        li {
+            font-size: 0.95rem;
+            color: $color-texto-suave;
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+
+            i {
+                color: #1c914c;
+                font-size: 0.9rem;
+                margin-top: 4px;
+            }
+        }
+    }
+
+    &.card-featured {
+        background-color: #0066cc;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0, 102, 204, 0.25);
+
+        .card-icon {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        h4 {
+            color: white;
+        }
+
+        .card-list {
+            li {
+                color: white;
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+   PISANDO EL ACCORDION DE BOOTSTRAP PARA LAS FAQS
+   ========================================================================== */
+
+// 1. Contenedor principal del acordeón
+.accordion {
+    --bs-accordion-border-color: #e2e8f0; // Línea gris sutil del diseño
+    --bs-accordion-bg: transparent; // Fondo limpio
+    max-width: 800px; // Lo centramos y acotamos como en tu Figma
+    margin: 0 auto;
+}
+
+// 2. Cada ítem o renglón de pregunta
+.accordion-item {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important; // Dejamos solo la línea inferior divisoria
+    border-bottom: 1px solid #e2e8f0 !important;
+    background: transparent !important;
+    margin-bottom: 5px;
+}
+
+// 3. El botón de la pregunta (Cuando está cerrado)
+.accordion-button {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0b1c3f !important; // Tu azul oscuro tipográfico
+    background-color: transparent !important;
+    padding: 20px 5px !important;
+    box-shadow: none !important; // Le saca el recuadro azul feo al hacer clic
+    transition: color 0.2s ease;
+
+    // Cambia a morado cuando el usuario pasa el mouse por encima
+    &:hover {
+        color: #7d5fff !important;
+    }
+
+    // La flechita de Bootstrap por defecto
+    &::after {
+        // Si querés que la flechita sea morada, podemos usar un filtro CSS mágico:
+        filter: invert(44%) sepia(91%) saturate(2853%) hue-rotate(238deg) brightness(101%) contrast(101%);
+    }
+
+    /* 🔥 CUANDO EL ACORDEÓN ESTÁ ABIERTO (:not(.collapsed)) */
+    &:not(.collapsed) {
+        color: #7d5fff !important; // El título se queda morado mientras esté abierto
+        background-color: transparent !important;
+        box-shadow: none !important;
+
+        &::after {
+            // Mantiene la flechita rotada y morada
+            filter: invert(44%) sepia(91%) saturate(2853%) hue-rotate(238deg) brightness(101%) contrast(101%);
+        }
+    }
+}
+
+// 4. El contenedor de la respuesta
+.accordion-body {
+    padding: 5px 5px 25px 5px !important; // Despegamos la respuesta para que respire
+    color: #5a6573 !important; // Tu gris suave para textos descriptivos
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
