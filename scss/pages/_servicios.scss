@@ -1,5 +1,92 @@
 @use "../variables" as *;
 
+.about-workflow {
+    padding: 30px 0;
+    text-align: center;
+
+    .workflow-header {
+        margin-bottom: 40px;
+
+        .workflow-tag {
+            color: $color-primario;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: black;
+            font-size: 1.1rem;
+        }
+    }
+
+    .workflow-timeline {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 32px;
+            left: 15%;
+            width: 70%;
+            height: 4px;
+            background-color: $color-primario-dark;
+            z-index: 1;
+        }
+    }
+
+    .timeline-step {
+        flex: 1;
+        position: relative;
+        padding: 0 30px;
+        z-index: 2;
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background-color: $color-primario-dark;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+            z-index: 3;
+        }
+
+        h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: black;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: black;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+    }
+}
+
 .about-gestion {
     text-align: center;
     margin-bottom: 90px;
@@ -99,67 +186,72 @@
     }
 }
 
+.faqs {
+    text-align: center;
+    color: $color-primario;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
 
-/* ==========================================================================
-   PISANDO EL ACCORDION DE BOOTSTRAP PARA LAS FAQS
-   ========================================================================== */
 
-// 1. Contenedor principal del acordeón
-.accordion {
-    --bs-accordion-border-color: #e2e8f0; // Línea gris sutil del diseño
-    --bs-accordion-bg: transparent; // Fondo limpio
-    max-width: 800px; // Lo centramos y acotamos como en tu Figma
-    margin: 0 auto;
+    h3 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: black;
+        margin-bottom: 10px;
+    }
 }
 
-// 2. Cada ítem o renglón de pregunta
-.accordion-item {
-    border-left: none !important;
-    border-right: none !important;
-    border-top: none !important; // Dejamos solo la línea inferior divisoria
-    border-bottom: 1px solid #e2e8f0 !important;
-    background: transparent !important;
-    margin-bottom: 5px;
-}
 
-// 3. El botón de la pregunta (Cuando está cerrado)
-.accordion-button {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #0b1c3f !important; // Tu azul oscuro tipográfico
-    background-color: transparent !important;
-    padding: 20px 5px !important;
-    box-shadow: none !important; // Le saca el recuadro azul feo al hacer clic
-    transition: color 0.2s ease;
-
-    // Cambia a morado cuando el usuario pasa el mouse por encima
-    &:hover {
-        color: #7d5fff !important;
+    .accordion {
+        --bs-accordion-border-color: $color-borde; // Línea gris sutil del diseño
+        --bs-accordion-bg: transparent;
+        max-width: 900px; // Lo centramos y acotamos como en tu Figma
+        margin: 20px auto;
     }
 
-    // La flechita de Bootstrap por defecto
-    &::after {
-        // Si querés que la flechita sea morada, podemos usar un filtro CSS mágico:
-        filter: invert(44%) sepia(91%) saturate(2853%) hue-rotate(238deg) brightness(101%) contrast(101%);
+    .accordion-item {
+        border-left: none !important;
+        border-right: none !important;
+        border-top: none !important; // Dejamos solo la línea inferior divisoria
+        border-bottom: 1px solid $color-borde !important;
+        background: transparent !important;
+        margin-bottom: 5px;
     }
 
-    /* 🔥 CUANDO EL ACORDEÓN ESTÁ ABIERTO (:not(.collapsed)) */
-    &:not(.collapsed) {
-        color: #7d5fff !important; // El título se queda morado mientras esté abierto
+    .accordion-button {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: $color-primario !important;
         background-color: transparent !important;
+        padding: 20px 5px !important;
         box-shadow: none !important;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $color-primario-dark !important;
+        }
 
         &::after {
-            // Mantiene la flechita rotada y morada
-            filter: invert(44%) sepia(91%) saturate(2853%) hue-rotate(238deg) brightness(101%) contrast(101%);
+            color: $color-primario-dark;
+        }
+
+        &:not(.collapsed) {
+            color: $color-primario-dark !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+
+            &::after {
+                color: $color-primario-dark;
+            }
         }
     }
-}
 
-// 4. El contenedor de la respuesta
-.accordion-body {
-    padding: 5px 5px 25px 5px !important; // Despegamos la respuesta para que respire
-    color: #5a6573 !important; // Tu gris suave para textos descriptivos
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
+    .accordion-body {
+        padding: 5px 5px 25px 5px !important;
+        color: $color-texto-suave !important;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
