@@ -52,6 +52,22 @@ header .header-nav ul {
   padding: 0;
   margin: 0;
 }
+header .header-nav ul a {
+  text-decoration: none;
+}
+header .header-nav ul:link {
+  color: #ffa423;
+}
+header .header-nav ul:visited {
+  color: #e08316;
+}
+header .header-nav ul:hover {
+  color: #b57212;
+  cursor: pointer;
+}
+header .header-nav ul:active {
+  color: #e08316;
+}
 
 /*COMPUTADORAS (A partir de 768px / Desktop)*/
 @media (min-width: 768px) {
@@ -171,7 +187,7 @@ header .header-nav ul {
   font-size: 0.85rem;
 }
 
-/*COMPUTADORAS (A partir de 992px / Desktop)*/
+/*COMPUTADORAS (A partir de 992px)*/
 @media (min-width: 992px) {
   .main-footer {
     padding-top: 30px;
@@ -598,6 +614,7 @@ header .header-nav ul {
 @media (min-width: 992px) {
   .tours-section {
     max-width: 1800px;
+    height: 30vh;
     margin: 60px auto;
   }
   .tours-section h2 {
@@ -867,8 +884,8 @@ header .header-nav ul {
 /*COMPUTADORAS (A partir de 992px)*/
 @media (min-width: 992px) {
   .nosotros {
-    height: 30vh;
     max-width: 1800px;
+    height: 30vh;
   }
   .nosotros h1 {
     font-size: 3.5rem;
@@ -1225,8 +1242,8 @@ header .header-nav ul {
 /*COMPUTADORAS (A partir de 992px)*/
 @media (min-width: 992px) {
   .service {
-    height: 30vh;
     max-width: 1800px;
+    height: 30vh;
   }
   .service h1 {
     font-size: 3.5rem;
@@ -1541,6 +1558,7 @@ header .header-nav ul {
 /*COMPUTADORAS (A partir de 992px)*/
 @media (min-width: 992px) {
   .seguros {
+    max-width: 1800px;
     height: 30vh;
   }
   .seguros h1 {

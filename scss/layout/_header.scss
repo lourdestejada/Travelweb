@@ -22,11 +22,26 @@ header {
             padding: 0;
             margin: 0;
 
-            a {text-decoration: none;}
-            &:link {color: $color-principal;}
-            &:visited{color: $color-primario-dark;}
-            &:hover{color: $color-badge-txt}
-            &:active{color: $color-primario-dark;}
+            a {
+                text-decoration: none;
+            }
+
+            &:link {
+                color: $color-primario;
+            }
+
+            &:visited {
+                color: $color-primario-dark;
+            }
+
+            &:hover {
+                color: $color-badge-txt;
+                cursor: pointer;
+            }
+
+            &:active {
+                color: $color-primario-dark;
+            }
         }
 
     }
