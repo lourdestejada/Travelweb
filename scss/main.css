@@ -33,31 +33,60 @@ a:active {
 
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 20px 0;
-  margin-right: 40px;
-  font-size: 20px;
+  gap: 15px;
+  padding: 15px 20px;
+  margin-right: 0;
+  font-size: 16px;
+}
+header .header-nav {
+  width: 100%;
 }
 header .header-nav ul {
   display: flex;
-  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+/*COMPUTADORAS (A partir de 768px / Desktop)*/
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin-right: 40px;
+    font-size: 20px;
+  }
+  header .header-nav {
+    width: auto;
+  }
+  header .header-nav ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
 .main-footer {
   background-color: #edf2f7;
-  padding-top: 30px;
+  padding: 40px 20px 20px 20px;
 }
 .main-footer .footer-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
   margin: 0 auto;
+}
+.main-footer .footer-col {
+  text-align: center;
 }
 .main-footer .footer-col h3 {
   font-size: 1.2rem;
   position: relative;
+  margin-bottom: 15px;
 }
 .main-footer .footer-col ul {
   list-style: none;
@@ -65,7 +94,6 @@ header .header-nav ul {
   flex-direction: column;
   gap: 15px;
   margin-top: 5px;
-  max-width: 1200px;
   padding: 0;
 }
 .main-footer .footer-col ul a {
@@ -78,25 +106,26 @@ header .header-nav ul {
   text-decoration: underline;
 }
 .main-footer .footer-about .footer-logo img {
-  height: 100%;
-  width: 300px;
-  margin-bottom: 20px;
+  height: auto;
+  width: 100%;
+  margin-bottom: 15px;
 }
 .main-footer .footer-about .footer-desc {
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 15px;
+  padding: 0 10px;
 }
 .main-footer .footer-about .social-links {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
 }
 .main-footer .footer-about .social-links a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   transition: transform 0.2s;
-  margin-left: 20px;
+  margin-left: 0;
   color: #ffa423;
 }
 .main-footer .footer-about .social-links a:hover {
@@ -104,8 +133,9 @@ header .header-nav ul {
 }
 .main-footer .footer-contact ul li {
   display: flex;
-  align-items: flex-start;
-  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   font-size: 0.95rem;
   line-height: 1.4;
   margin-bottom: 20px;
@@ -113,9 +143,9 @@ header .header-nav ul {
 .main-footer .footer-contact ul li .icon {
   color: #ffa423;
   font-size: 1.2rem;
-  width: 20px;
+  width: auto;
   text-align: center;
-  margin-top: 3px;
+  margin-top: 0;
 }
 .main-footer .footer-contact ul li .contact-info {
   display: flex;
@@ -134,19 +164,63 @@ header .header-nav ul {
   margin-top: 2px;
 }
 .main-footer .footer-bottom {
-  margin-top: 1%;
+  margin-top: 30px;
   border-top: 2px solid white;
-  padding: 20px 20px;
+  padding: 20px 0 0 0;
   text-align: center;
   font-size: 0.85rem;
 }
 
+/*COMPUTADORAS (A partir de 992px / Desktop)*/
+@media (min-width: 992px) {
+  .main-footer {
+    padding-top: 30px;
+  }
+  .main-footer .footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+    max-width: 1800px;
+  }
+  .main-footer .footer-col {
+    text-align: left;
+  }
+  .main-footer .footer-col ul {
+    max-width: 1800px;
+  }
+  .main-footer .footer-about .footer-logo img {
+    margin-bottom: 20px;
+    padding: 30px;
+  }
+  .main-footer .footer-about .social-links {
+    justify-content: flex-start;
+  }
+  .main-footer .footer-about .social-links a {
+    margin-left: 20px;
+  }
+  .main-footer .footer-contact ul li {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .main-footer .footer-contact ul li .icon {
+    width: 20px;
+    margin-top: 3px;
+  }
+  .main-footer .footer-bottom {
+    margin-top: 1%;
+    padding: 20px 20px;
+  }
+}
 .first-section {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
-  align-items: center;
-  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 15px;
+  min-height: auto;
+}
+.first-section .section-content {
+  text-align: center;
 }
 .first-section .section-content .decoration {
   font-family: "Playfair Display";
@@ -155,17 +229,17 @@ header .header-nav ul {
   color: #b57212;
   padding: 8px 16px;
   border-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 900;
   display: inline-block;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .first-section .section-content h1 {
   font-family: "Montserrat";
   font-style: italic;
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 25px;
+  font-size: 2.1rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
 }
 .first-section .section-content .highlight {
   color: #ffa423;
@@ -173,74 +247,69 @@ header .header-nav ul {
   text-decoration: underline;
 }
 .first-section .section-content p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: black;
-  line-height: 2;
+  line-height: 1.6;
 }
 .first-section .section-gallery {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  height: 100%;
+  gap: 10px;
+  width: 100%;
 }
 .first-section .section-gallery .gallery-item {
   flex: 1;
   border: 2px solid;
-  border-radius: 25px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  height: 220px;
 }
-.first-section .section-gallery .item-1 {
-  height: 380px;
-  transform: translateY(-20px);
-}
-.first-section .section-gallery .item-2 {
-  height: 380px;
-}
+.first-section .section-gallery .item-1,
+.first-section .section-gallery .item-2,
 .first-section .section-gallery .item-3 {
-  height: 380px;
-  transform: translateY(20px);
+  height: 220px;
+  transform: none;
 }
 
 .newsletter-section {
-  margin: 80px 0px;
+  margin: 40px 15px;
 }
 .newsletter-section .newsletter-container {
   background-color: #d2e9f9;
   border-radius: 24px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 20px;
   position: relative;
   overflow: hidden;
 }
 .newsletter-section .newsletter-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0;
+  text-align: center;
 }
 .newsletter-section .newsletter-content h2 {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   line-height: 1.3;
-  padding: 0 0 20px 0;
+  padding-bottom: 15px;
 }
 .newsletter-section .subscribe-form {
   display: flex;
   background-color: white;
-  padding: 8px;
+  padding: 6px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-  margin-bottom: 20px;
-  max-width: 480px;
+  margin: 0 auto 20px auto;
+  max-width: 100%;
 }
 .newsletter-section .subscribe-form input {
   border: none;
   outline: none;
-  padding: 12px 15px;
-  font-size: 1rem;
+  padding: 10px;
+  font-size: 0.9rem;
   flex: 1;
+  width: 50%;
 }
 .newsletter-section .subscribe-form input::-moz-placeholder {
   color: #a0aec0;
@@ -252,42 +321,138 @@ header .header-nav ul {
   background-color: #e08316;
   color: white;
   border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
+  padding: 10px 15px;
+  font-size: 0.9rem;
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s;
-}
-.newsletter-section .subscribe-form .btn-subscribe:hover {
-  filter: brightness(92%);
 }
 .newsletter-section .newsletter-note {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #5a6573;
-  line-height: 1.5;
-  max-width: 450px;
+  line-height: 1.4;
+  margin: 0 auto;
 }
 .newsletter-section .newsletter-image {
-  position: absolute;
-  bottom: 0;
-  right: 40px;
-  height: 100%;
+  position: static;
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
 }
 .newsletter-section .newsletter-image img {
-  display: block;
-  width: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  max-width: 220px;
+  height: auto;
 }
 
+/*TABLETS (A partir de 768px)*/
+@media (min-width: 768px) {
+  .first-section {
+    padding: 40px;
+  }
+  .first-section .section-content h1 {
+    font-size: 2.6rem;
+  }
+  .first-section .section-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .first-section .section-gallery {
+    gap: 15px;
+  }
+  .first-section .section-gallery .gallery-item {
+    height: 320px;
+    border-radius: 25px;
+  }
+  .first-section .section-gallery .item-1 {
+    transform: translateY(-15px);
+  }
+  .first-section .section-gallery .item-3 {
+    transform: translateY(15px);
+  }
+  .newsletter-section {
+    margin: 60px 40px;
+  }
+  .newsletter-section .newsletter-container {
+    padding: 40px;
+  }
+  .newsletter-section .newsletter-content h2 {
+    font-size: 2rem;
+  }
+  .newsletter-section .subscribe-form {
+    max-width: 450px;
+  }
+}
+/*COMPUTADORAS (A partir de 992px)*/
+@media (min-width: 992px) {
+  .first-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 70vh;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  .first-section .section-content {
+    text-align: left;
+  }
+  .first-section .section-content h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+  }
+  .first-section .section-content .decoration {
+    margin-bottom: 25px;
+  }
+  .first-section .section-content p {
+    line-height: 2;
+  }
+  .first-section .section-gallery .gallery-item {
+    height: 380px;
+  }
+  .first-section .section-gallery .item-1 {
+    transform: translateY(-20px);
+  }
+  .first-section .section-gallery .item-3 {
+    transform: translateY(20px);
+  }
+  .newsletter-section {
+    max-width: 1800px;
+    margin: 80px auto;
+  }
+  .newsletter-section .newsletter-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    padding: 40px 40px 20px 40px;
+  }
+  .newsletter-section .newsletter-content {
+    text-align: left;
+    padding: 0;
+  }
+  .newsletter-section .newsletter-content h2 {
+    padding-bottom: 20px;
+  }
+  .newsletter-section .subscribe-form {
+    margin: 0 0 20px 0;
+  }
+  .newsletter-section .newsletter-image {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    height: 100%;
+    width: auto;
+    align-items: flex-end;
+  }
+  .newsletter-section .newsletter-image img {
+    max-width: 100%;
+    height: 100%;
+  }
+}
 .tours-hero {
   background-image: url(../assets/isla.jpg);
   background-size: cover;
   background-position: center;
-  height: 30vh;
+  height: 25vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -306,29 +471,29 @@ header .header-nav ul {
 .tours-hero h1 {
   font-style: italic;
   color: white;
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   z-index: 1;
+  text-align: center;
+  padding: 0 15px;
 }
 
 .tours-section {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+  margin: 40px auto;
+  padding: 0 15px;
 }
 .tours-section h2 {
   text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 40px;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
   font-weight: 700;
   color: black;
 }
 
 .tours-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: auto;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -377,42 +542,99 @@ header .header-nav ul {
 .card-info .destination-title {
   display: block;
   font-family: "Playfair Display", "Georgia", cursive, serif;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-style: italic;
   line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 .card-info .country-title {
   display: block;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.card-large {
-  grid-column: span 3;
-  height: 450px;
-}
-
+.card-large,
+.card-medium,
 .card-small {
-  grid-column: span 2;
   height: 280px;
 }
-.card-small .destination-title {
-  font-size: 1.6rem;
-}
 
-.card-medium {
-  grid-column: span 3;
-  height: 350px;
+/*TABLETS (A partir de 768px)*/
+@media (min-width: 768px) {
+  .tours-hero {
+    height: 30vh;
+  }
+  .tours-hero h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .tours-section {
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+  .tours-section h2 {
+    font-size: 2rem;
+  }
+  .tours-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .card-large,
+  .card-medium,
+  .card-small {
+    grid-column: span 1;
+    height: 320px;
+  }
+  .card-large .card-info .destination-title,
+  .card-medium .card-info .destination-title,
+  .card-small .card-info .destination-title {
+    font-size: 1.8rem;
+  }
 }
-
+/*COMPUTADORAS (A partir de 992px)*/
+@media (min-width: 992px) {
+  .tours-section {
+    max-width: 1800px;
+    margin: 60px auto;
+  }
+  .tours-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  .tours-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .card-info .destination-title {
+    font-size: 2.2rem;
+  }
+  .card-info .country-title {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+  }
+  .card-large {
+    grid-column: span 3;
+    height: 450;
+  }
+  .card-small {
+    grid-column: span 2;
+    height: 280px;
+  }
+  .card-small .destination-title {
+    font-size: 1.6rem;
+  }
+  .card-medium {
+    grid-column: span 3;
+    height: 350px;
+  }
+}
 .nosotros {
   background-image: url(../assets/isla.jpg);
   background-size: cover;
   background-position: center;
-  height: 30vh;
+  height: 25vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -430,47 +652,47 @@ header .header-nav ul {
 }
 .nosotros h1 {
   color: white;
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   font-style: italic;
   z-index: 1;
+  text-align: center;
+  padding: 0 15px;
 }
 
 .about-intro,
 .about-services,
 .about-experience {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  padding: 0 15px;
 }
 
 .about-intro {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 50px;
 }
 .about-intro .intro-text {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 25px;
 }
 .about-intro .intro-block h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: black;
+  text-align: center;
 }
 .about-intro .intro-block p {
   color: #5a6573;
   font-size: 1rem;
   line-height: 1.5;
 }
-.about-intro .intro-image {
-  flex: 1;
-}
 .about-intro .intro-image img {
   width: 100%;
-  height: 400px;
+  height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
@@ -478,12 +700,12 @@ header .header-nav ul {
 }
 
 .about-services .services-header {
-  text-align: left;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 .about-services .services-header .subtitle-cursive {
   font-family: "Playfair Display", "Georgia", cursive, serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-style: italic;
   color: #ffa423;
   display: block;
@@ -495,16 +717,15 @@ header .header-nav ul {
   color: black;
 }
 .about-services .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .about-services .service-card {
   background: #feeacf;
-  padding: 40px 30px;
+  padding: 30px 20px;
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 122, 0, 0.1);
   transition: transform 0.3s ease;
 }
@@ -512,22 +733,23 @@ header .header-nav ul {
   transform: translateY(-5px);
 }
 .about-services .service-card .service-icon-box {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   background-color: rgba(255, 122, 0, 0.15);
   color: #ffa423;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 25px;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  margin: auto;
 }
 .about-services .service-card h4 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: black;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .about-services .service-card p {
   color: #5a6573;
@@ -538,63 +760,62 @@ header .header-nav ul {
 
 .about-experience {
   display: flex;
-  align-items: center;
-  gap: 60px;
-}
-.about-experience .experience-content {
-  flex: 1.2;
+  flex-direction: column;
+  gap: 35px;
 }
 .about-experience .experience-content .experience-tag {
   font-family: "Playfair Display", "Georgia", cursive, serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-style: italic;
   color: #ffa423;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 .about-experience .experience-content h3 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: black;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 .about-experience .experience-content p {
   color: #5a6573;
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .about-experience .experience-content .stats-boxes {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 .about-experience .experience-content .stat-item {
   background-color: #ffa423;
   color: white;
-  padding: 25px 20px;
-  border-radius: 16px;
+  padding: 20px 10px;
+  border-radius: 14px;
   text-align: center;
   flex: 1;
 }
 .about-experience .experience-content .stat-item .stat-number {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 4px;
 }
 .about-experience .experience-content .stat-item p {
   color: white;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 0;
 }
 .about-experience .experience-image {
-  flex: 1;
   display: flex;
   justify-content: center;
 }
 .about-experience .experience-image img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 350px;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -602,11 +823,148 @@ header .header-nav ul {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+/*TABLETS (A partir de 768px)*/
+@media (min-width: 768px) {
+  .about-intro,
+  .about-services,
+  .about-experience {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0 30px;
+  }
+  .about-intro {
+    flex-direction: row;
+    gap: 35px;
+    align-items: center;
+  }
+  .about-intro .intro-block h2 {
+    text-align: left;
+  }
+  .about-intro .intro-image img {
+    height: 350px;
+  }
+  .about-services .services-header {
+    text-align: left;
+  }
+  .about-services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .about-experience {
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+  }
+  .about-experience .experience-content .about-experience,
+  .about-experience .experience-content h3 {
+    text-align: left;
+  }
+  .about-experience .experience-image {
+    max-width: 100%;
+  }
+}
+/*COMPUTADORAS (A partir de 992px)*/
+@media (min-width: 992px) {
+  .nosotros {
+    height: 30vh;
+    max-width: 1800px;
+  }
+  .nosotros h1 {
+    font-size: 3.5rem;
+  }
+  .about-intro,
+  .about-services,
+  .about-experience {
+    max-width: 1800px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  .about-intro {
+    gap: 50px;
+    margin: 20px 20px;
+  }
+  .about-intro .intro-text {
+    gap: 35px;
+  }
+  .about-intro .intro-block h2 {
+    font-size: 2rem;
+  }
+  .about-intro .intro-image img {
+    height: 400px;
+  }
+  .about-services .services-header {
+    margin-bottom: 40px;
+  }
+  .about-services .services-header .subtitle-cursive {
+    font-size: 1.8rem;
+  }
+  .about-services .services-header h3 {
+    font-size: 2rem;
+  }
+  .about-services .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  .about-services .service-card {
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  .about-services .service-card .service-icon-box {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  .about-services .service-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .about-services .service-card p {
+    font-size: 0.95rem;
+  }
+  .about-experience {
+    gap: 60px;
+  }
+  .about-experience .experience-content {
+    flex: 1.2;
+  }
+  .about-experience .experience-content .experience-tag {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .about-experience .experience-content h3 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+  .about-experience .experience-content p {
+    margin-bottom: 40px;
+  }
+  .about-experience .experience-content .stats-boxes {
+    gap: 20px;
+  }
+  .about-experience .experience-content .stat-item {
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+  .about-experience .experience-content .stat-item .stat-number {
+    font-size: 1.8rem;
+  }
+  .about-experience .experience-content .stat-item p {
+    font-size: 0.85rem;
+  }
+  .about-experience .experience-image {
+    flex: 1;
+  }
+}
 .service {
   background-image: url(../assets/isla.jpg);
   background-size: cover;
   background-position: center;
-  height: 30vh;
+  height: 25vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -625,18 +983,20 @@ header .header-nav ul {
 }
 .service h1 {
   color: white;
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   font-style: italic;
   z-index: 1;
+  text-align: center;
+  padding: 0 15px;
 }
 
 .about-workflow {
-  padding: 60px 0;
+  padding: 40px 15px;
   text-align: center;
 }
 .about-workflow .workflow-header {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .about-workflow .workflow-header .workflow-tag {
   color: #ffa423;
@@ -647,98 +1007,90 @@ header .header-nav ul {
   margin-bottom: 10px;
 }
 .about-workflow .workflow-header h3 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: black;
   margin-bottom: 10px;
 }
 .about-workflow .workflow-header p {
   color: black;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .about-workflow .workflow-timeline {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 800px;
+  flex-direction: column;
+  gap: 40px;
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
   position: relative;
 }
 .about-workflow .workflow-timeline::before {
-  content: "";
-  position: absolute;
-  top: 32px;
-  left: 15%;
-  width: 70%;
-  height: 4px;
-  background-color: #e08316;
-  z-index: 1;
+  display: none;
 }
 .about-workflow .timeline-step {
-  flex: 1;
   position: relative;
-  padding: 0 20px;
+  padding: 0;
   z-index: 2;
 }
 .about-workflow .timeline-step .step-number {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   background-color: #e08316;
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 25px auto;
+  margin: 0 auto 15px auto;
   z-index: 3;
 }
 .about-workflow .timeline-step h5 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: black;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .about-workflow .timeline-step p {
   color: black;
   font-size: 0.95rem;
   line-height: 1.6;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .about-gestion {
   text-align: center;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
+  padding: 0 15px;
 }
 .about-gestion .gestion-header {
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 .about-gestion .gestion-header h3 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: black;
   margin-bottom: 15px;
 }
 .about-gestion .gestion-header p {
   color: black;
-  font-size: 1.1rem;
-  max-width: 700px;
+  font-size: 1rem;
   margin: 0 auto;
 }
 .about-gestion .gestion-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 .about-gestion .gestion-card {
   background: #feeacf;
   border-radius: 20px;
-  padding: 40px 30px;
+  padding: 30px 20px;
   text-align: left;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 .about-gestion .gestion-card:hover {
@@ -754,19 +1106,22 @@ header .header-nav ul {
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .about-gestion .gestion-card h4 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: black;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   letter-spacing: 1px;
 }
 .about-gestion .gestion-card .card-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .about-gestion .gestion-card .card-list li {
   font-size: 0.95rem;
@@ -790,9 +1145,10 @@ header .header-nav ul {
   letter-spacing: 2px;
   display: block;
   margin-bottom: 10px;
+  padding: 0 15px;
 }
 .faqs h3 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: black;
   margin-bottom: 10px;
@@ -801,8 +1157,7 @@ header .header-nav ul {
 .accordion {
   --bs-accordion-border-color: $color-borde;
   --bs-accordion-bg: transparent;
-  max-width: 900px;
-  margin: 20px auto;
+  margin: 20px 15px;
 }
 
 .accordion-item {
@@ -815,41 +1170,149 @@ header .header-nav ul {
 }
 
 .accordion-button {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #ffa423 !important;
   background-color: transparent !important;
-  padding: 20px 5px !important;
+  padding: 15px 5px !important;
   box-shadow: none !important;
   transition: color 0.2s ease;
 }
 .accordion-button:hover {
   color: #e08316 !important;
 }
-.accordion-button::after {
-  color: #e08316;
-}
 .accordion-button:not(.collapsed) {
   color: #e08316 !important;
   background-color: transparent !important;
   box-shadow: none !important;
 }
-.accordion-button:not(.collapsed)::after {
-  color: #e08316;
-}
 
 .accordion-body {
-  padding: 5px 5px 25px 5px !important;
+  padding: 5px 5px 20px 5px !important;
   color: #5a6573 !important;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
+/*TABLETS (A partir de 768px)*/
+@media (min-width: 768px) {
+  .about-workflow .workflow-timeline {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 720px;
+    padding: 0;
+  }
+  .about-workflow .workflow-timeline::before {
+    display: block;
+    top: 30px;
+    left: 15%;
+    width: 70%;
+    height: 4px;
+    transform: none;
+  }
+  .about-workflow .timeline-step {
+    flex: 1;
+  }
+  .about-workflow .timeline-step p {
+    max-width: 100%;
+  }
+  .about-gestion .gestion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+/*COMPUTADORAS (A partir de 992px)*/
+@media (min-width: 992px) {
+  .service {
+    height: 30vh;
+    max-width: 1800px;
+  }
+  .service h1 {
+    font-size: 3.5rem;
+  }
+  .about-workflow {
+    padding: 60px 0;
+  }
+  .about-workflow .workflow-header {
+    margin-bottom: 40px;
+  }
+  .about-workflow .workflow-header h3 {
+    font-size: 2.4rem;
+  }
+  .about-workflow .workflow-header p {
+    font-size: 1.1rem;
+  }
+  .about-workflow .workflow-timeline {
+    max-width: 1000px;
+  }
+  .about-workflow .workflow-timeline::before {
+    top: 32px;
+  }
+  .about-workflow .timeline-step {
+    padding: 0 20px;
+  }
+  .about-workflow .timeline-step .step-number {
+    width: 64px;
+    height: 64px;
+    font-size: 1.4rem;
+    margin: 0 auto 25px auto;
+  }
+  .about-workflow .timeline-step h5 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+  .about-gestion {
+    margin-bottom: 90px;
+    padding: 0;
+  }
+  .about-gestion .gestion-header {
+    margin-bottom: 50px;
+  }
+  .about-gestion .gestion-header h3 {
+    font-size: 2.4rem;
+  }
+  .about-gestion .gestion-header p {
+    font-size: 1.1rem;
+  }
+  .about-gestion .gestion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  .about-gestion .gestion-card {
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  .about-gestion .gestion-card .card-icon {
+    margin-bottom: 25px;
+  }
+  .about-gestion .gestion-card .card-icon h4 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+  }
+  .faqs h3 {
+    font-size: 2.4rem;
+  }
+  .accordion {
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  .accordion-button {
+    font-size: 1.05rem;
+    padding: 20px 5px !important;
+  }
+  .accordion-body {
+    padding: 5px 5px 25px 5px !important;
+  }
+}
 .seguros {
   background-image: url(../assets/isla.jpg);
   background-size: cover;
   background-position: center;
-  height: 30vh;
+  height: 25vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -867,29 +1330,29 @@ header .header-nav ul {
 }
 .seguros h1 {
   color: white;
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   font-style: italic;
   z-index: 1;
+  text-align: center;
+  padding: 0 15px;
 }
 
 .insurance-benefits {
-  padding: 60px 0;
+  padding: 40px 15px;
 }
 .insurance-benefits .benefits-intro {
   display: flex;
-  align-items: center;
-  gap: 50px;
-  margin-bottom: 80px;
-}
-.insurance-benefits .benefits-intro .intro-text {
-  flex: 1;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 50px;
 }
 .insurance-benefits .benefits-intro .intro-text h2 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: black;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 .insurance-benefits .benefits-intro .intro-text p {
   color: #5a6573;
@@ -901,9 +1364,6 @@ header .header-nav ul {
   color: #e08316;
   display: inline;
 }
-.insurance-benefits .benefits-intro .intro-image {
-  flex: 1;
-}
 .insurance-benefits .benefits-intro .intro-image img {
   width: 100%;
   border-radius: 15px;
@@ -911,29 +1371,30 @@ header .header-nav ul {
 }
 .insurance-benefits .benefits-details {
   display: flex;
-  align-items: center;
-  gap: 60px;
+  flex-direction: column;
+  gap: 35px;
 }
 .insurance-benefits .benefits-details .details-image {
-  flex: 0 0 35%;
   display: flex;
   justify-content: center;
 }
 .insurance-benefits .benefits-details .details-image .img-circular {
   width: 100%;
-  max-width: 320px;
+  max-width: 260px;
   border-radius: 40% 60% 40% 60%/50% 40% 60% 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .insurance-benefits .benefits-details .details-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.insurance-benefits .benefits-details .benefit-item {
+  text-align: center;
 }
 .insurance-benefits .benefits-details .benefit-item .benefit-number {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 800;
   color: #ffa423;
   display: block;
@@ -944,13 +1405,14 @@ header .header-nav ul {
   font-size: 1.25rem;
   font-weight: 700;
   color: #b57212;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 .insurance-benefits .benefits-details .benefit-item .benefit-list {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 8px;
 }
 .insurance-benefits .benefits-details .benefit-item .benefit-list li {
@@ -968,37 +1430,37 @@ header .header-nav ul {
 }
 
 .insurance-pricing {
-  padding: 40px 0 80px 0;
+  padding: 30px 15px 60px 15;
 }
 .insurance-pricing .pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 .insurance-pricing .price-card {
   background-color: white;
   border: 2px solid #e08316;
   border-radius: 15px;
-  padding: 40px 30px;
+  padding: 35px 20px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
 }
 .insurance-pricing .price-card:hover {
   transform: translateY(-5px);
 }
 .insurance-pricing .price-card .card-header-plan {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .insurance-pricing .price-card .card-header-plan h3 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #ffa423;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .insurance-pricing .price-card .card-header-plan .price {
   font-size: 1.5rem;
@@ -1034,4 +1496,114 @@ header .header-nav ul {
 .btn-price-outline:hover {
   background-color: #ffa423;
   color: white;
+}
+
+/*TABLETS (A partir de 768px)*/
+@media (min-width: 768px) {
+  .insurance-benefits {
+    padding: 50px 20px;
+  }
+  .insurance-benefits .benefits-intro {
+    flex-direction: row;
+    gap: 30px;
+  }
+  .insurance-benefits .benefits-intro .intro-text h2 {
+    text-align: left;
+  }
+  .insurance-benefits .benefits-details {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .insurance-benefits .benefits-details .details-image {
+    flex: 0 0 40%;
+  }
+  .insurance-benefits .benefits-details .details-image .img-circular {
+    max-width: 300px;
+  }
+  .insurance-benefits .benefits-details .details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+    flex: 1;
+  }
+  .insurance-benefits .benefits-details .benefit-item {
+    text-align: left;
+  }
+  .insurance-benefits .benefits-details .benefit-item .benefit-list {
+    align-items: flex-start;
+  }
+  .insurance-pricing .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+/*COMPUTADORAS (A partir de 992px)*/
+@media (min-width: 992px) {
+  .seguros {
+    height: 30vh;
+  }
+  .seguros h1 {
+    font-size: 3.5rem;
+  }
+  .insurance-benefits {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+  .insurance-benefits .benefits-intro {
+    gap: 50px;
+    margin: 20px 80px;
+  }
+  .insurance-benefits .benefits-intro .intro-text {
+    flex: 1;
+  }
+  .insurance-benefits .benefits-intro .intro-text h2 {
+    font-style: 2.2rem;
+  }
+  .insurance-benefits .benefits-intro .intro-image {
+    flex: 1;
+    display: flex;
+  }
+  .insurance-benefits .benefits-intro .intro-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .insurance-benefits .benefits-details {
+    gap: 60px;
+  }
+  .insurance-benefits .benefits-details .details-image {
+    flex: 0 0 35%;
+  }
+  .insurance-benefits .benefits-details .details-image .img-circular {
+    max-width: 320px;
+  }
+  .insurance-benefits .benefits-details .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+  }
+  .insurance-benefits .benefits-details .benefit-item .benefit-number {
+    font-size: 2.5rem;
+  }
+  .insurance-pricing {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 40px 0 80px 0;
+  }
+  .insurance-pricing .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .insurance-pricing .price-card {
+    padding: 40px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  .insurance-pricing .price-card .card-header-plan {
+    margin-bottom: 30px;
+  }
+  .insurance-pricing .price-card .card-header-plan h3 {
+    font-size: 1.4rem;
+  }
 }/*# sourceMappingURL=main.css.map */

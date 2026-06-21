@@ -6,7 +6,7 @@
     background-image: url(../assets/isla.jpg);
     background-size: cover;
     background-position: center;
-    height: 30vh;
+    height: 25vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -25,40 +25,42 @@
 
     h1 {
         color: white;
-        font-size: 3.5rem;
+        font-size: 2.2rem;
         font-weight: 700;
         font-style: italic;
         z-index: 1;
+        text-align: center;
+        padding: 0 15px;
     }
 }
 
 .about-intro,
 .about-services,
 .about-experience {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    padding: 0 15px;
 }
 
 .about-intro {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 50px;
 
     .intro-text {
-        flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 35px;
+        gap: 25px;
     }
 
     .intro-block {
         h2 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: black;
+            text-align: center;
         }
-
 
         p {
             color: $color-texto-suave;
@@ -67,13 +69,10 @@
         }
     }
 
-
     .intro-image {
-        flex: 1;
-
         img {
             width: 100%;
-            height: 400px;
+            height: 250px;
             object-fit: cover;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -83,12 +82,12 @@
 
 .about-services {
     .services-header {
-        text-align: left;
-        margin-bottom: 40px;
+        text-align: center;
+        margin-bottom: 30px;
 
         .subtitle-cursive {
             font-family: "Playfair Display", "Georgia", cursive, serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-style: italic;
             color: $color-primario;
             display: block;
@@ -103,17 +102,16 @@
     }
 
     .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .service-card {
         background: $color-badge-bg;
-        padding: 40px 30px;
+        padding: 30px 20px;
         border-radius: 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         border: 1px solid rgba(255, 122, 0, 0.1);
         transition: transform 0.3s ease;
 
@@ -122,23 +120,24 @@
         }
 
         .service-icon-box {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             background-color: rgba(255, 122, 0, 0.15);
             color: $color-primario;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 25px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            margin: auto;
         }
 
         h4 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: black;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         p {
@@ -152,58 +151,57 @@
 
 .about-experience {
     display: flex;
-    align-items: center;
-    gap: 60px;
+    flex-direction: column;
+    gap: 35px;
 
     .experience-content {
-        flex: 1.2;
-
         .experience-tag {
             font-family: "Playfair Display", "Georgia", cursive, serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-style: italic;
             color: $color-primario;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            text-align: center;
         }
 
         h3 {
-            font-size: 2.4rem;
+            font-size: 1.8rem;
             font-weight: 600;
             color: black;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         p {
             color: $color-texto-suave;
             font-size: 1rem;
             line-height: 1.6;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-
 
         .stats-boxes {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
         .stat-item {
             background-color: $color-primario;
             color: white;
-            padding: 25px 20px;
-            border-radius: 16px;
+            padding: 20px 10px;
+            border-radius: 14px;
             text-align: center;
             flex: 1;
 
             .stat-number {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
                 font-weight: 700;
                 margin-bottom: 4px;
             }
 
             p {
                 color: white;
-                font-size: 0.85rem;
+                font-size: 0.8rem;
                 font-weight: 400;
                 line-height: 1.2;
                 margin-bottom: 0;
@@ -212,16 +210,195 @@
     }
 
     .experience-image {
-        flex: 1;
         display: flex;
         justify-content: center;
 
         img {
-            max-width: 100%;
+            width: 100%;
+            max-width: 350px;
             height: auto;
             object-fit: cover;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+    }
+}
+
+/*TABLETS (A partir de 768px)*/
+@media (min-width:768px) {
+
+    .about-intro,
+    .about-services,
+    .about-experience {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding: 0 30px;
+    }
+
+    .about-intro {
+        flex-direction: row;
+        gap: 35px;
+        align-items: center;
+
+        .intro-block h2 {
+            text-align: left;
+        }
+
+        .intro-image img {
+            height: 350px;
+        }
+    }
+
+    .about-services {
+        .services-header {
+            text-align: left;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+    .about-experience {
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+
+        .experience-content {
+
+            .about-experience,
+            h3 {
+                text-align: left;
+            }
+        }
+
+        .experience-image {
+            max-width: 100%;
+        }
+    }
+}
+
+/*COMPUTADORAS (A partir de 992px)*/
+@media (min-width:992px) {
+    .nosotros {
+        height: 30vh;
+        max-width: 1800px;
+
+        h1 {
+            font-size: 3.5rem;
+        }
+    }
+
+    .about-intro,
+    .about-services,
+    .about-experience {
+        max-width: 1800px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 20px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .about-intro {
+        gap: 50px;
+        margin: 20px 20px;
+
+        .intro-text {
+            gap: 35px;
+        }
+
+        .intro-block h2 {
+            font-size: 2rem;
+        }
+
+        .intro-image img {
+            height: 400px;
+        }
+    }
+
+    .about-services {
+        .services-header {
+            margin-bottom: 40px;
+
+            .subtitle-cursive {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+        }
+
+        .services-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 40px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+            .service-icon-box {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+                margin-bottom: 25px;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+    .about-experience {
+        gap: 60px;
+
+        .experience-content {
+            flex: 1.2;
+
+            .experience-tag {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                font-size: 2.4rem;
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin-bottom: 40px;
+            }
+
+            .stats-boxes {
+                gap: 20px;
+            }
+
+            .stat-item {
+                padding: 25px 20px;
+                border-radius: 16px;
+
+                .stat-number {
+                    font-size: 1.8rem;
+                }
+
+                p {
+                    font-size: 0.85rem;
+                }
+            }
+        }
+
+        .experience-image {
+            flex: 1;
         }
     }
 }

@@ -1,14 +1,46 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    margin-right: 40px;
-    font-size: 20px;
+@use "../variables" as *;
+@use "../base" as *;
 
-    .header-nav ul {
-        display: flex;
-        gap: 30px;
-        list-style: none;
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    margin-right: 0;
+    font-size: 16px;
+
+    .header-nav {
+        width: 100%;
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+/*COMPUTADORAS (A partir de 768px / Desktop)*/
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 0;
+        margin-right: 40px;
+        font-size: 20px;
+
+        .header-nav{
+            width: auto;
+
+            ul{
+                flex-direction: row;
+                gap: 30px;
+            }
+        }
     }
 }

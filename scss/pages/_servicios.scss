@@ -6,7 +6,7 @@
     background-image: url(../assets/isla.jpg);
     background-size: cover;
     background-position: center;
-    height: 30vh;
+    height: 25vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -26,20 +26,21 @@
 
     h1 {
         color: white;
-        font-size: 3.5rem;
+        font-size: 2.2rem;
         font-weight: 700;
         font-style: italic;
         z-index: 1;
+        text-align: center;
+        padding: 0 15px;
     }
 }
 
-
 .about-workflow {
-    padding: 60px 0;
+    padding: 40px 15px;
     text-align: center;
 
     .workflow-header {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
 
         .workflow-tag {
             color: $color-primario;
@@ -51,7 +52,7 @@
         }
 
         h3 {
-            font-size: 2.4rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: black;
             margin-bottom: 10px;
@@ -59,77 +60,71 @@
 
         p {
             color: black;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
 
     .workflow-timeline {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        max-width: 800px;
+        flex-direction: column;
+        gap: 40px;
         width: 100%;
         margin: 0 auto;
         padding: 0 10px;
         position: relative;
 
         &::before {
-            content: "";
-            position: absolute;
-            top: 32px;
-            left: 15%;
-            width: 70%;
-            height: 4px;
-            background-color: $color-primario-dark;
-            z-index: 1;
+            display: none;
         }
     }
 
     .timeline-step {
-        flex: 1;
         position: relative;
-        padding: 0 20px;
+        padding: 0;
         z-index: 2;
 
         .step-number {
-            width: 64px;
-            height: 64px;
+            width: 60px;
+            height: 60px;
             background-color: $color-primario-dark;
             color: white;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px auto;
+            margin: 0 auto 15px auto;
             z-index: 3;
         }
 
         h5 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: black;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         p {
             color: black;
             font-size: 0.95rem;
             line-height: 1.6;
+            max-width: 280px;
+            margin: 0 auto;
         }
     }
 }
 
 .about-gestion {
     text-align: center;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
+    padding: 0 15px;
 
     .gestion-header {
-        margin-bottom: 50px;
+        margin-bottom: 35px;
 
         h3 {
-            font-size: 2.4rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: black;
             margin-bottom: 15px;
@@ -137,26 +132,23 @@
 
         p {
             color: black;
-            font-size: 1.1rem;
-            max-width: 700px;
+            font-size: 1rem;
             margin: 0 auto;
         }
     }
 
     .gestion-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        align-items: stretch;
-
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
     }
 
     .gestion-card {
         background: $color-badge-bg;
         border-radius: 20px;
-        padding: 40px 30px;
+        padding: 30px 20px;
         text-align: left;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease;
 
         &:hover {
@@ -173,14 +165,14 @@
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         h4 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: black;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
@@ -188,6 +180,9 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
 
             li {
                 font-size: 0.95rem;
@@ -215,10 +210,10 @@
     letter-spacing: 2px;
     display: block;
     margin-bottom: 10px;
-
+    padding: 0 15px;
 
     h3 {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
         font-weight: 700;
         color: black;
         margin-bottom: 10px;
@@ -228,8 +223,7 @@
 .accordion {
     --bs-accordion-border-color: $color-borde;
     --bs-accordion-bg: transparent;
-    max-width: 900px;
-    margin: 20px auto;
+    margin: 20px 15px;
 }
 
 .accordion-item {
@@ -242,11 +236,11 @@
 }
 
 .accordion-button {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     color: $color-primario !important;
     background-color: transparent !important;
-    padding: 20px 5px !important;
+    padding: 15px 5px !important;
     box-shadow: none !important;
     transition: color 0.2s ease;
 
@@ -254,24 +248,165 @@
         color: $color-primario-dark !important;
     }
 
-    &::after {
-        color: $color-primario-dark;
-    }
-
     &:not(.collapsed) {
         color: $color-primario-dark !important;
         background-color: transparent !important;
         box-shadow: none !important;
-
-        &::after {
-            color: $color-primario-dark;
-        }
     }
 }
 
 .accordion-body {
-    padding: 5px 5px 25px 5px !important;
+    padding: 5px 5px 20px 5px !important;
     color: $color-texto-suave !important;
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+/*TABLETS (A partir de 768px)*/
+@media (min-width: 768px) {
+    .about-workflow {
+        .workflow-timeline {
+            flex-direction: row;
+            justify-content: space-between;
+            max-width: 720px;
+            padding: 0;
+
+            &::before {
+                display: block;
+                top: 30px;
+                left: 15%;
+                width: 70%;
+                height: 4px;
+                transform: none;
+            }
+        }
+
+        .timeline-step {
+            flex: 1;
+
+            p {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .about-gestion {
+        .gestion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+/*COMPUTADORAS (A partir de 992px)*/
+@media (min-width: 992px) {
+    .service {
+        height: 30vh;
+        max-width: 1800px;
+
+        h1 {
+            font-size: 3.5rem;
+        }
+    }
+
+    .about-workflow {
+        padding: 60px 0;
+
+        .workflow-header {
+            margin-bottom: 40px;
+
+            h3 {
+                font-size: 2.4rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .workflow-timeline {
+            max-width: 1000px;
+
+            &::before {
+                top: 32px;
+
+            }
+        }
+
+        .timeline-step {
+            padding: 0 20px;
+
+            .step-number {
+                width: 64px;
+                height: 64px;
+                font-size: 1.4rem;
+                margin: 0 auto 25px auto;
+            }
+
+            h5 {
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    .about-gestion {
+        margin-bottom: 90px;
+        padding: 0;
+
+        .gestion-header {
+            margin-bottom: 50px;
+
+            h3 {
+                font-size: 2.4rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .gestion-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .gestion-card {
+            padding: 40px 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+            .card-icon {
+                margin-bottom: 25px;
+
+                h4 {
+                    font-size: 1.3rem;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+
+    .faqs {
+        h3 {
+            font-size: 2.4rem;
+        }
+    }
+
+    .accordion {
+        max-width: 900px;
+        margin: 20px auto;
+    }
+
+    .accordion-button {
+        font-size: 1.05rem;
+        padding: 20px 5px !important;
+    }
+
+    .accordion-body {
+        padding: 5px 5px 25px 5px !important;
+    }
 }
