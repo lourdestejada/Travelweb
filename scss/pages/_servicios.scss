@@ -1,7 +1,41 @@
 @use "../variables" as *;
+@use "../base" as *;
+
+
+.service {
+    background-image: url(../assets/isla.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .title-service {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 700;
+        font-style: italic;
+        z-index: 1;
+    }
+}
+
 
 .about-workflow {
-    padding: 30px 0;
+    padding: 60px 0;
     text-align: center;
 
     .workflow-header {
@@ -54,7 +88,7 @@
     .timeline-step {
         flex: 1;
         position: relative;
-        padding: 0 30px;
+        padding: 0 20px;
         z-index: 2;
 
         .step-number {
@@ -113,14 +147,16 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
+        align-items: stretch;
+
     }
 
     .gestion-card {
-        background-color: $color-badge-bg;
+        background: $color-badge-bg;
         border-radius: 20px;
         padding: 40px 30px;
         text-align: left;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s ease;
 
         &:hover {
@@ -148,39 +184,24 @@
             letter-spacing: 1px;
         }
 
-        li {
-            font-size: 0.95rem;
-            color: $color-texto-suave;
-            line-height: 1.5;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-
-            i {
-                color: #1c914c;
-                font-size: 0.9rem;
-                margin-top: 4px;
-            }
-        }
-    }
-
-    &.card-featured {
-        background-color: #0066cc;
-        color: white;
-        box-shadow: 0 10px 30px rgba(0, 102, 204, 0.25);
-
-        .card-icon {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-
-        h4 {
-            color: white;
-        }
-
         .card-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
             li {
-                color: white;
+                font-size: 0.95rem;
+                color: black;
+                line-height: 1.5;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+
+                i {
+                    color: #1c914c;
+                    font-size: 0.9rem;
+                    margin-top: 4px;
+                }
             }
         }
     }
@@ -204,54 +225,53 @@
     }
 }
 
+.accordion {
+    --bs-accordion-border-color: $color-borde;
+    --bs-accordion-bg: transparent;
+    max-width: 900px;
+    margin: 20px auto;
+}
 
-    .accordion {
-        --bs-accordion-border-color: $color-borde; // Línea gris sutil del diseño
-        --bs-accordion-bg: transparent;
-        max-width: 900px; // Lo centramos y acotamos como en tu Figma
-        margin: 20px auto;
+.accordion-item {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid $color-borde !important;
+    background: transparent !important;
+    margin-bottom: 5px;
+}
+
+.accordion-button {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: $color-primario !important;
+    background-color: transparent !important;
+    padding: 20px 5px !important;
+    box-shadow: none !important;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $color-primario-dark !important;
     }
 
-    .accordion-item {
-        border-left: none !important;
-        border-right: none !important;
-        border-top: none !important; // Dejamos solo la línea inferior divisoria
-        border-bottom: 1px solid $color-borde !important;
-        background: transparent !important;
-        margin-bottom: 5px;
+    &::after {
+        color: $color-primario-dark;
     }
 
-    .accordion-button {
-        font-size: 1.05rem;
-        font-weight: 600;
-        color: $color-primario !important;
+    &:not(.collapsed) {
+        color: $color-primario-dark !important;
         background-color: transparent !important;
-        padding: 20px 5px !important;
         box-shadow: none !important;
-        transition: color 0.2s ease;
-
-        &:hover {
-            color: $color-primario-dark !important;
-        }
 
         &::after {
             color: $color-primario-dark;
         }
-
-        &:not(.collapsed) {
-            color: $color-primario-dark !important;
-            background-color: transparent !important;
-            box-shadow: none !important;
-
-            &::after {
-                color: $color-primario-dark;
-            }
-        }
     }
+}
 
-    .accordion-body {
-        padding: 5px 5px 25px 5px !important;
-        color: $color-texto-suave !important;
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
+.accordion-body {
+    padding: 5px 5px 25px 5px !important;
+    color: $color-texto-suave !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}

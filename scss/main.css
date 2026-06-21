@@ -66,6 +66,7 @@ header .header-nav ul {
   gap: 15px;
   margin-top: 5px;
   max-width: 1200px;
+  padding: 0;
 }
 .main-footer .footer-col ul a {
   color: black;
@@ -161,6 +162,7 @@ header .header-nav ul {
 }
 .first-section .section-content h1 {
   font-family: "Montserrat";
+  font-style: italic;
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 25px;
@@ -186,7 +188,7 @@ header .header-nav ul {
   border: 2px solid;
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 10px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 .first-section .section-gallery .item-1 {
   height: 380px;
@@ -291,8 +293,7 @@ header .header-nav ul {
   align-items: center;
   justify-content: center;
 }
-.tours-hero .hero.overlay {
-  background-color: rgba(0, 0, 0, 0.35);
+.tours-hero .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -327,6 +328,7 @@ header .header-nav ul {
 .tours-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
   gap: 20px;
 }
 
@@ -343,7 +345,7 @@ header .header-nav ul {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 0.5 ease;
+  transition: transform 0.5s ease;
 }
 .tour-card::after {
   content: "";
@@ -395,7 +397,7 @@ header .header-nav ul {
 
 .card-small {
   grid-column: span 2;
-  height: 180px;
+  height: 280px;
 }
 .card-small .destination-title {
   font-size: 1.6rem;
@@ -407,7 +409,7 @@ header .header-nav ul {
 }
 
 .nosotros {
-  background-image: url("/assets/about.jpg");
+  background-image: url(../assets/isla.jpg);
   background-size: cover;
   background-position: center;
   height: 30vh;
@@ -417,7 +419,6 @@ header .header-nav ul {
   justify-content: center;
 }
 .nosotros .title-nosotros {
-  background-color: rgba(0, 0, 0, 0.35);
   position: absolute;
   top: 0;
   left: 0;
@@ -435,10 +436,11 @@ header .header-nav ul {
   z-index: 1;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 80px auto;
-  padding: 0 20px;
+.about-intro,
+.about-services,
+.about-experience {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .about-intro {
@@ -496,6 +498,7 @@ header .header-nav ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  align-items: stretch;
 }
 .about-services .service-card {
   background: #feeacf;
@@ -561,11 +564,11 @@ header .header-nav ul {
   line-height: 1.6;
   margin-bottom: 40px;
 }
-.about-experience .stats-boxes {
+.about-experience .experience-content .stats-boxes {
   display: flex;
   gap: 20px;
 }
-.about-experience .stat-item {
+.about-experience .experience-content .stat-item {
   background-color: #ffa423;
   color: white;
   padding: 25px 20px;
@@ -573,12 +576,12 @@ header .header-nav ul {
   text-align: center;
   flex: 1;
 }
-.about-experience .stat-item .stat-number {
+.about-experience .experience-content .stat-item .stat-number {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 4px;
 }
-.about-experience .stat-item p {
+.about-experience .experience-content .stat-item p {
   color: white;
   font-size: 0.85rem;
   font-weight: 400;
@@ -593,13 +596,43 @@ header .header-nav ul {
 .about-experience .experience-image img {
   max-width: 100%;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service {
+  background-image: url(../assets/isla.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service .title-service {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service h1 {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-style: italic;
+  z-index: 1;
 }
 
 .about-workflow {
-  padding: 30px 0;
+  padding: 60px 0;
   text-align: center;
 }
 .about-workflow .workflow-header {
@@ -646,7 +679,7 @@ header .header-nav ul {
 .about-workflow .timeline-step {
   flex: 1;
   position: relative;
-  padding: 0 30px;
+  padding: 0 20px;
   z-index: 2;
 }
 .about-workflow .timeline-step .step-number {
@@ -698,13 +731,14 @@ header .header-nav ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  align-items: stretch;
 }
 .about-gestion .gestion-card {
-  background-color: #feeacf;
+  background: #feeacf;
   border-radius: 20px;
   padding: 40px 30px;
   text-align: left;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
 .about-gestion .gestion-card:hover {
@@ -729,33 +763,23 @@ header .header-nav ul {
   margin-bottom: 25px;
   letter-spacing: 1px;
 }
-.about-gestion .gestion-card li {
+.about-gestion .gestion-card .card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.about-gestion .gestion-card .card-list li {
   font-size: 0.95rem;
-  color: #5a6573;
+  color: black;
   line-height: 1.5;
   display: flex;
   align-items: flex-start;
   gap: 10px;
 }
-.about-gestion .gestion-card li i {
+.about-gestion .gestion-card .card-list li i {
   color: #1c914c;
   font-size: 0.9rem;
   margin-top: 4px;
-}
-.about-gestion.card-featured {
-  background-color: #0066cc;
-  color: white;
-  box-shadow: 0 10px 30px rgba(0, 102, 204, 0.25);
-}
-.about-gestion.card-featured .card-icon {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-.about-gestion.card-featured h4 {
-  color: white;
-}
-.about-gestion.card-featured .card-list li {
-  color: white;
 }
 
 .faqs {
@@ -819,4 +843,195 @@ header .header-nav ul {
   color: #5a6573 !important;
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+.seguros {
+  background-image: url(../assets/isla.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.seguros .title-seguros {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.seguros h1 {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-style: italic;
+  z-index: 1;
+}
+
+.insurance-benefits {
+  padding: 60px 0;
+}
+.insurance-benefits .benefits-intro {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+.insurance-benefits .benefits-intro .intro-text {
+  flex: 1;
+}
+.insurance-benefits .benefits-intro .intro-text h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 20px;
+}
+.insurance-benefits .benefits-intro .intro-text p {
+  color: #5a6573;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.insurance-benefits .benefits-intro .intro-text p strong {
+  color: #e08316;
+  display: inline;
+}
+.insurance-benefits .benefits-intro .intro-image {
+  flex: 1;
+}
+.insurance-benefits .benefits-intro .intro-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+.insurance-benefits .benefits-details {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.insurance-benefits .benefits-details .details-image {
+  flex: 0 0 35%;
+  display: flex;
+  justify-content: center;
+}
+.insurance-benefits .benefits-details .details-image .img-circular {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 40% 60% 40% 60%/50% 40% 60% 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.insurance-benefits .benefits-details .details-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 30px;
+}
+.insurance-benefits .benefits-details .benefit-item .benefit-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffa423;
+  display: block;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.insurance-benefits .benefits-details .benefit-item h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #b57212;
+  margin-bottom: 15px;
+}
+.insurance-benefits .benefits-details .benefit-item .benefit-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.insurance-benefits .benefits-details .benefit-item .benefit-list li {
+  font-size: 0.95rem;
+  color: #5a6573;
+  position: relative;
+  padding-left: 15px;
+}
+.insurance-benefits .benefits-details .benefit-item .benefit-list li::before {
+  content: "*";
+  color: #b57212;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.insurance-pricing {
+  padding: 40px 0 80px 0;
+}
+.insurance-pricing .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+.insurance-pricing .price-card {
+  background-color: white;
+  border: 2px solid #e08316;
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.insurance-pricing .price-card:hover {
+  transform: translateY(-5px);
+}
+.insurance-pricing .price-card .card-header-plan {
+  margin-bottom: 30px;
+}
+.insurance-pricing .price-card .card-header-plan h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffa423;
+  margin-bottom: 15px;
+}
+.insurance-pricing .price-card .card-header-plan .price {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #b57212;
+}
+.insurance-pricing li {
+  font-size: 0.95rem;
+  color: #5a6573;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+.insurance-pricing li i {
+  color: #e08316;
+  font-size: 1rem;
+}
+
+.btn-price-outline {
+  width: 100%;
+  background: transparent;
+  border: 1.5px solid #e08316;
+  color: #e08316;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-price-outline:hover {
+  background-color: #ffa423;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

@@ -1,4 +1,6 @@
 @use "../variables" as *;
+@use "../base" as *;
+
 
 .tours-hero {
     background-image: url(../assets/isla.jpg);
@@ -11,8 +13,7 @@
     justify-content: center;
 
 
-    .hero.overlay {
-        background-color: rgba(0, 0, 0, 0.35);
+    .hero-overlay {
         position: absolute;
         top: 0;
         left: 0;
@@ -51,6 +52,7 @@
 .tours-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
     gap: 20px;
 }
 
@@ -66,7 +68,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5 ease;
+        transition: transform 0.5s ease;
     }
 
     &::after {
@@ -123,7 +125,7 @@
 }
 .card-small {
     grid-column: span 2;
-    height: 180px;
+    height: 280px;
 
     .destination-title{
         font-size: 1.6rem;
