@@ -228,7 +228,7 @@
         padding: 50px 20px;
 
         .benefits-intro {
-            flex-direction: row;
+            flex-direction: column;
             gap: 30px;
 
             .intro-text h2 {
@@ -276,15 +276,7 @@
 
 /*COMPUTADORAS (A partir de 992px)*/
 @media (min-width:992px) {
-    .seguros {
-        max-width: 1800px;
-        height: 30vh;
-
-        h1 {
-            font-size: 3.5rem;
-        }
-    }
-
+    
     .insurance-benefits {
         max-width: 1800px;
         margin: 0 auto;
@@ -293,6 +285,7 @@
         .benefits-intro {
             gap: 50px;
             margin: 20px 80px;
+            flex-direction: row;
 
             .intro-text {
                 flex: 1;

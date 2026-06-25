@@ -407,7 +407,7 @@ header .header-nav ul:active {
     align-items: center;
     min-height: 70vh;
     max-width: 1800px;
-    margin: 0 auto;
+    margin: 20px auto;
   }
   .first-section .section-content {
     text-align: left;
@@ -433,7 +433,7 @@ header .header-nav ul:active {
   }
   .newsletter-section {
     max-width: 1800px;
-    margin: 80px auto;
+    margin: 20px auto;
   }
   .newsletter-section .newsletter-container {
     display: grid;
@@ -485,10 +485,10 @@ header .header-nav ul:active {
   justify-content: center;
 }
 .tours-hero h1 {
-  font-style: italic;
   color: white;
   font-size: 2.2rem;
   font-weight: 700;
+  font-style: italic;
   letter-spacing: 1px;
   z-index: 1;
   text-align: center;
@@ -614,7 +614,6 @@ header .header-nav ul:active {
 @media (min-width: 992px) {
   .tours-section {
     max-width: 1800px;
-    height: 30vh;
     margin: 60px auto;
   }
   .tours-section h2 {
@@ -653,6 +652,7 @@ header .header-nav ul:active {
   background-position: center;
   height: 25vh;
   position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -787,7 +787,7 @@ header .header-nav ul:active {
   color: #ffa423;
   display: block;
   margin-bottom: 5px;
-  text-align: center;
+  text-align: left;
 }
 .about-experience .experience-content h3 {
   font-size: 1.8rem;
@@ -832,7 +832,7 @@ header .header-nav ul:active {
 }
 .about-experience .experience-image img {
   width: 100%;
-  max-width: 350px;
+  max-width: 600px;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -883,26 +883,15 @@ header .header-nav ul:active {
 }
 /*COMPUTADORAS (A partir de 992px)*/
 @media (min-width: 992px) {
-  .nosotros {
-    max-width: 1800px;
-    height: 30vh;
-  }
-  .nosotros h1 {
-    font-size: 3.5rem;
-  }
   .about-intro,
   .about-services,
   .about-experience {
     max-width: 1800px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 20px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin: 10px auto;
+    padding: 30px;
   }
   .about-intro {
     gap: 50px;
-    margin: 20px 20px;
   }
   .about-intro .intro-text {
     gap: 35px;
@@ -947,7 +936,7 @@ header .header-nav ul:active {
     gap: 60px;
   }
   .about-experience .experience-content {
-    flex: 1.2;
+    flex: 1;
   }
   .about-experience .experience-content .experience-tag {
     font-size: 1.8rem;
@@ -982,7 +971,6 @@ header .header-nav ul:active {
   background-size: cover;
   background-position: center;
   height: 25vh;
-  width: 100%;
   position: relative;
   display: flex;
   align-items: center;
@@ -1003,6 +991,7 @@ header .header-nav ul:active {
   font-size: 2.2rem;
   font-weight: 700;
   font-style: italic;
+  letter-spacing: 1px;
   z-index: 1;
   text-align: center;
   padding: 0 15px;
@@ -1241,13 +1230,6 @@ header .header-nav ul:active {
 }
 /*COMPUTADORAS (A partir de 992px)*/
 @media (min-width: 992px) {
-  .service {
-    max-width: 1800px;
-    height: 30vh;
-  }
-  .service h1 {
-    font-size: 3.5rem;
-  }
   .about-workflow {
     padding: 60px 0;
   }
@@ -1521,7 +1503,7 @@ header .header-nav ul:active {
     padding: 50px 20px;
   }
   .insurance-benefits .benefits-intro {
-    flex-direction: row;
+    flex-direction: column;
     gap: 30px;
   }
   .insurance-benefits .benefits-intro .intro-text h2 {
@@ -1557,13 +1539,6 @@ header .header-nav ul:active {
 }
 /*COMPUTADORAS (A partir de 992px)*/
 @media (min-width: 992px) {
-  .seguros {
-    max-width: 1800px;
-    height: 30vh;
-  }
-  .seguros h1 {
-    font-size: 3.5rem;
-  }
   .insurance-benefits {
     max-width: 1800px;
     margin: 0 auto;
@@ -1572,6 +1547,7 @@ header .header-nav ul:active {
   .insurance-benefits .benefits-intro {
     gap: 50px;
     margin: 20px 80px;
+    flex-direction: row;
   }
   .insurance-benefits .benefits-intro .intro-text {
     flex: 1;

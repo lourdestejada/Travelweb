@@ -25,10 +25,10 @@
     }
 
     h1 {
-        font-style: italic;
         color: white;
         font-size: 2.2rem;
         font-weight: 700;
+        font-style: italic;
         letter-spacing: 1px;
         z-index: 1;
         text-align: center;
@@ -167,7 +167,6 @@
 @media (min-width: 992px) {
     .tours-section {
         max-width: 1800px;
-        height: 30vh;
         margin: 60px auto;
 
         h2 {
