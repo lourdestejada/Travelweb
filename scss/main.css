@@ -518,7 +518,6 @@ header .header-nav ul:active {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .tour-card img {
@@ -673,8 +672,8 @@ header .header-nav ul:active {
 .about-intro,
 .about-services,
 .about-experience {
-  margin-top: 45px;
-  margin-bottom: 45px;
+  margin-left: 30px;
+  margin-right: 30px;
   padding: 0 15px;
 }
 
